@@ -1,9 +1,10 @@
 import "./assets/styles/App.css";
-import Note from "./pages/note";
+import UserStories from "./pages/UserStories";
+import "./assets/font/icofont/icofont.min.css"
 
 const App = () => {
   return <div className="App">
-    <Note />
+    <UserStories />
   </div>;
 };
 
