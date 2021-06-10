@@ -1,60 +1,17 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import remark from "remark";
 import remark2react from "remark-react";
 import ViewNote from "./ViewNote.jsx";
-
-const Note = styled.div`
-  margin: 0 auto 25px 20px;
-  width: 1150px;
-  height: 200px;
-  border-radius: 20px;
-  background-color: #247d96;
-  color: #fff;
-`;
-
-const NoteProperty = styled.div`
-  display: flex;
-  border-bottom: 1px solid #fff;
-`;
-
-const NoteDate = styled.p`
-  font-size: 15px;
-  margin: 15px auto 15px 30px;
-`;
-
-const NoteView = styled.div`
-  margin: auto 20px auto;
-  cursor: pointer;
-  font-size: 27px;
-`;
-
-const NoteEdit = styled.div`
-  margin: auto 20px auto;
-  cursor: pointer;
-  font-size: 20px;
-`;
-
-const NoteDelete = styled.div`
-  margin: auto 30px auto 20px;
-  cursor: pointer;
-  font-size: 20px;
-`;
-
-const NoteText = styled.div`
-  margin: 20px 70px;
-  text-align: left;
-`;
-
-const TextBody = styled.p`
-  margin: 10px 20px;
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-`;
+import {
+  Note,
+  NoteProperty,
+  NoteDate,
+  NoteView,
+  NoteEdit,
+  NoteDelete,
+  NoteText,
+  TextBody,
+} from "../styles";
 
 const NoteRender = (props) => {
   const NoteState =
