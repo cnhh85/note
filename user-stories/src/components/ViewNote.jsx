@@ -9,8 +9,7 @@ import {
   TextViewBody,
   EditContainer,
 } from "../styles";
-import remark from "remark";
-import remark2react from "remark-react";
+import ReactMarkdown from 'react-markdown'
 
 const ViewNote = (props) => {
   const handleChange = (event) => {
@@ -41,7 +40,7 @@ const ViewNote = (props) => {
           ></EditContainer>
         ) : (
           <TextViewBody>
-            {remark().use(remark2react).processSync(props.text).contents}
+          <ReactMarkdown>{props.text}</ReactMarkdown>
           </TextViewBody>
         )}
       </NoteText>

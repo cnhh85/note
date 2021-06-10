@@ -108,13 +108,8 @@ export const NoteText = styled.div`
 `;
 
 export const TextBody = styled.p`
-  margin: 10px 20px;
+  margin: 0 20px;
   font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
 `;
 
 //ViewNote.jsx
@@ -142,7 +137,7 @@ export const CloseView = styled.div`
 `;
 
 export const TextViewBody = styled.p`
-  margin: 10px 20px;
+  margin: 0 20px;
   font-size: 16px;
   overflow-y: scroll;
   &::-webkit-scrollbar-track {

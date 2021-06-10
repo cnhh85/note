@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import remark from "remark";
-import remark2react from "remark-react";
+import ReactMarkdown from 'react-markdown'
 import ViewNote from "./ViewNote.jsx";
 import {
   Note,
@@ -63,7 +62,7 @@ const NoteRender = (props) => {
       </NoteProperty>
       <NoteText>
         <TextBody>
-          {remark().use(remark2react).processSync(text).contents}
+        <ReactMarkdown>{text}</ReactMarkdown>
         </TextBody>
       </NoteText>
       {toggleView.show ? (
