@@ -48,7 +48,7 @@ const UserStories = () => {
   return (
     <Box>
       <SectionTitle>
-        <SectionH1>Hi</SectionH1>
+        <SectionH1>Hi!</SectionH1>
         <AddNote onClick={addNote}>ADD NOTE</AddNote>
       </SectionTitle>
       <NoteContainer length={note.length > 2 ? "scroll" : "hidden"}>
