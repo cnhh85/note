@@ -13,6 +13,32 @@ import {
 } from "../styles";
 
 const NoteRender = (props) => {
+
+  const createdOn = new Date(props.date)
+  let date = createdOn.getDate()
+  let month = createdOn.getMonth() + 1
+  const yyyy = createdOn.getFullYear()
+
+  let hours = createdOn.getHours()
+  const minutes = createdOn.getMinutes()
+  let seconds = createdOn.getSeconds()
+
+  if (date < 10) {
+    date = `0${date}`
+  }
+  if (month < 10) {
+    month = `0${month}`
+  }
+  if (seconds < 10) {
+    seconds = `0${seconds}`
+  }
+
+  hours = hours > 12 ? hours - 12 : hours < 10 ? '0' + hours : hours
+
+  const formattedDate = `${date}-${month}-${yyyy} ${hours}:${minutes}:${seconds} ${
+    createdOn.getHours() > 12 ? 'PM' : 'AM'
+  }`
+
   const NoteState =
     window.localStorage.getItem(`note-${props.idx}`) || "# Hello World";
   const [text, setText] = useState(NoteState);
@@ -49,7 +75,7 @@ const NoteRender = (props) => {
   return (
     <Note>
       <NoteProperty>
-        <NoteDate>{props.date.toString()}</NoteDate>
+        <NoteDate>{formattedDate}</NoteDate>
         <NoteView onClick={() => changeToggleView(false)}>
           <i className="icofont-eye-alt"></i>
         </NoteView>
@@ -69,7 +95,7 @@ const NoteRender = (props) => {
         <ViewNote
           toggleEdit={() => changeToggleEdit()}
           toggleShow={() => changeToggleShow()}
-          date={props.date.toString()}
+          date={formattedDate}
           edit={toggleView.edit}
           text={text}
           onChange={handleChange}

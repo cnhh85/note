@@ -18,7 +18,7 @@ const ViewNote = (props) => {
   return (
     <FullNote>
       <NoteProperty>
-        <NoteDate>{props.date.toString()}</NoteDate>
+        <NoteDate>{props.date}</NoteDate>
         {props.edit ? (
           <NoteView onClick={props.toggleEdit}>
             <i className="icofont-eye-alt"></i>
