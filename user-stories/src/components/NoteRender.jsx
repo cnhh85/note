@@ -84,9 +84,11 @@ const NoteRender = (props) => {
 
   const changeToggleShow = () => {
     setToggleView({ show: !toggleView.show, edit: toggleView.edit });
-  }
+  };
 
-  console.log(toggleView);
+  const handleChange = (newValue) => {
+    setText(newValue);
+  };
 
   return (
     <Note>
@@ -114,7 +116,7 @@ const NoteRender = (props) => {
           date={props.date.toString()}
           edit={toggleView.edit}
           text={text}
-          changeText={e => setText(e.target.value)}
+          onChange={handleChange}
         />
       ) : null}
     </Note>

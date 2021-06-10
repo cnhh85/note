@@ -86,6 +86,9 @@ const EditContainer = styled.textarea`
 `;
 
 const ViewNote = (props) => {
+  const handleChange = (event) => {
+    props.onChange(event.target.value);
+  };
   return (
     <FullNote>
       <NoteProperty>
@@ -105,7 +108,10 @@ const ViewNote = (props) => {
       </NoteProperty>
       <NoteText>
         {props.edit ? (
-          <EditContainer defaultValue={props.text}></EditContainer>
+          <EditContainer
+            defaultValue={props.text}
+            onChange={handleChange}
+          ></EditContainer>
         ) : (
           <TextBody>{props.text}</TextBody>
         )}
